@@ -24,7 +24,7 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
-	mqtt "git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.golang.git"
+	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"github.com/jacobsa/go-serial/serial"
 	"github.com/op/go-logging"
 	"github.com/timmathews/argo/actisense"
@@ -155,7 +155,7 @@ func main() {
 	}
 
 	// Set up MQTT Client
-	var mqttClient *mqtt.Client
+	var mqttClient mqtt.Client
 	if !config.Mqtt.Disabled {
 		mqttOpts := mqtt.NewClientOptions().AddBroker(fmt.Sprintf("ssl://%v:%v", config.Mqtt.Host, config.Mqtt.Port))
 		mqttOpts.SetClientID("argo") // TODO: This needs to be moved to config file
