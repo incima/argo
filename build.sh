@@ -9,7 +9,8 @@ build () {
   go get github.com/wsxiaoys/terminal
   go get github.com/gorilla/mux
   go get github.com/gorilla/websocket
-  go get git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.golang.git
+  # MQTT lib moved.
+  go get github.com/eclipse/paho.mqtt.golang
   go get github.com/burntsushi/toml
   go get github.com/imdario/mergo
   go get github.com/satori/go.uuid
